@@ -25,7 +25,7 @@
 </head>
 <body>
     <nav class="navbar navbar-expand-lg custom-navbar">
-        <a class="navbar-brand d-flex align-items-center ms-4" href="#">
+        <a class="navbar-brand d-flex align-items-center ms-4" href="index.html">
             <img src="pics/logo.png" href="index.html" alt="Logo" style="height: 80px; width: auto;" class="me-2">
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -79,7 +79,7 @@
         const productElement = document.createElement('div');
         productElement.className = 'product';
         productElement.innerHTML = `
-          <img src="images/${product.image}" alt="${product.name}">
+          <img src="pics/${product.image}" alt="${product.name}">
           <h3>${product.name}</h3>
           <p>$${product.price}</p>
           <button onclick="addToCart('${product._id}')">Add to Cart</button>

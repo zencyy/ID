@@ -1,3 +1,4 @@
+/*Home*/
 .custom-navbar {
     background-color: #A4DD8E; 
     padding: 10px;
@@ -14,4 +15,67 @@
     object-fit: cover;     
     object-position: top;  /* Focuses on the top of the image */
     display: block;        
+}
+
+.card-img-top {
+    height: 400px !important;  /* Force the height to apply */
+    object-fit: cover;         /* Maintain aspect ratio, crop excess */
+    width: 100%;               /* Fill the card width */
+    display: block;            /* Remove any inline spacing */
+}
+
+/* Card Styles */
+.feature-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 15px; /* Rounded corners */
+    overflow: hidden;    /* Prevent content overflow */
+}
+
+/* Hover Effect */
+.feature-card:hover {
+    transform: translateY(-10px); /* Lift on hover */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Image Styling */
+.card-img-top {
+    height: 250px;
+    object-fit: cover;
+    width: 100%;
+    display: block;
+}
+
+/* Button Customization */
+.btn-custom {
+    background-color: #523825 !important;; /* Matches your navbar color */
+    border: none;
+    transition: background-color 0.3s ease;
+    color: white;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 20px;
+}
+
+.container {
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+/* Button Hover (Footer) */
+.btn-custom:hover {
+    background-color: #755035 !important;; /* Darker green on hover */
+    color: #fff;
+}
+
+footer {
+    background-color: #523825; /* Dark background */
+    color: #fff;               /* White text */
+}
+footer img {
+    max-height: 80px; /* Controls logo size */
+    width: auto;
+}
+footer a:hover {
+    color: #A4DD8E;            /* Highlight on hover */
+    text-decoration: underline;
 }
