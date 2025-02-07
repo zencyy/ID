@@ -1,0 +1,29 @@
+
+#productImage {
+    max-width: 100%;
+    height: auto;
+}
+
+#colorSelect {
+    max-width: 200px;
+}
+
+.accordion-button:not(.collapsed) {
+    background-color: #e7f1ff;
+    color: #0c63e4;
+}
+
+.accordion-button:focus {
+    box-shadow: none;
+    border-color: rgba(0,0,0,.125);
+}
+
+#reviewsContainer .review {
+    border-bottom: 1px solid #dee2e6;
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+}
+
+#reviewsContainer .review:last-child {
+    border-bottom: none;
+}

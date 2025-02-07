@@ -6,7 +6,7 @@
 }
 
 .carousel-inner {
-    height: 500px; /* Controls the carousel height */
+    height: 400px; /* Controls the carousel height */
 }
 
 .carousel-inner img {
@@ -15,6 +15,20 @@
     object-fit: cover;     
     object-position: top;  /* Focuses on the top of the image */
     display: block;        
+}
+.carousel-caption {
+    left: 10%; /* Align text to the left */
+    right: auto;
+    top: 20%; /* Moves text higher */
+    bottom: auto; /* Remove bottom positioning */
+    max-width: 400px;
+    /* Keeps text readable */
+}
+.btn-custom {
+    background-color: #ff6f61; /* Custom button color */
+    border-radius: 25px;
+    padding: 10px 20px;
+    font-weight: bold;
 }
 
 .card-img-top {
@@ -68,7 +82,7 @@
 }
 
 footer {
-    background-color: #523825; /* Dark background */
+    background-color: #805435; /* Dark background */
     color: #fff;               /* White text */
 }
 footer img {

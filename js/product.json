@@ -1,0 +1,5 @@
+[
+    {"_id":"67a0ef26f63b804800102a26","name":"Classic Mug","price":40,"image":"mug1.png"},
+    {"_id":"67a0ef44f63b804800102a2b","name":"Funny Mug","price":30,"image":"mug2.png"},
+    {"_id":"67a0ef53f63b804800102a2d","name":"Nice Mug","price":20,"image":"mug3.png"}
+]
