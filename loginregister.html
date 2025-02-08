@@ -1,0 +1,25 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Supabase Auth</title>
+    <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
+    <script src="auth.js"></script>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 300px; margin: 0 auto; padding: 20px; }
+        input, button { display: block; width: 100%; margin-bottom: 10px; padding: 5px; }
+    </style>
+</head>
+<body>
+    <h2 id="authTitle">Login</h2>
+    <form id="authForm">
+        <input type="email" id="email" placeholder="Email" required>
+        <input type="password" id="password" placeholder="Password" required>
+        <button type="submit" id="submitButton">Login</button>
+    </form>
+    <button id="toggleAuth">Switch to Register</button>
+
+</body>
+</html>
