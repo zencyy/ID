@@ -68,9 +68,11 @@
       </div>
   </div>
   <br>
-  <!-- Add the products container here -->
-  <div id="products" class="product-container"></div>
-    
+  <div class="container mt-5">
+    <h2 class="text-center mb-4">Our Collection</h2>
+    <p class="text-center mb-5">Discover our unique and stylish mug designs, perfect for every occasion.</p>
+    <div id="products" class="product-container"></div>
+</div>    
   <script>
     document.addEventListener('DOMContentLoaded', function() {
       const productsContainer = document.getElementById('products');
@@ -104,28 +106,29 @@
     }
   
     function displayProducts(products) {
-      const productsContainer = document.getElementById('products');
-      productsContainer.innerHTML = ''; 
+  const productsContainer = document.getElementById('products');
+  productsContainer.innerHTML = ''; 
 
-      products.forEach(product => {
-        const productElement = document.createElement('div');
-        productElement.className = 'card product-card';
+  products.forEach(product => {
+    const productElement = document.createElement('div');
+    productElement.className = 'product-card';
 
-        productElement.innerHTML = `
-          <a href="product-detail.html?id=${product._id}" class="text-decoration-none">
-            <img src="pics/${product.image}" alt="${product.name}" class="card-img-top">
-            <div class="card-body">
-              <h5 class="card-title">${product.name}</h5>
-              <p class="card-text">$${product.price}</p>
-            </div>
-          </a>
-          <div class="card-footer">
-            <button class="btn btn-custom" onclick="addToCart(event, '${product._id}', '${product.name}', ${product.price})">Add to Cart</button>
-          </div>
-        `;
-        productsContainer.appendChild(productElement);
-      });
-    }
+    productElement.innerHTML = `
+      <div class="product-image">
+        <a href="product-detail.html?id=${product._id}">
+          <img src="pics/${product.image}" alt="${product.name}" class="card-img-top">
+        </a>
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">${product.name}</h5>
+        <p class="card-text">$${product.price.toFixed(2)}</p>
+        <button class="btn btn-custom" onclick="addToCart(event, '${product._id}', '${product.name}', ${product.price}, '${product.image}')">Add to Cart</button>
+      </div>
+    `;
+    productsContainer.appendChild(productElement);
+  });
+}
+
   </script>
   <script src="js/cart.js"></script>
 </body>

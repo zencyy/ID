@@ -20,7 +20,7 @@
         <div class="collapse navbar-collapse ms-3" id="navbarNavDropdown">
             <ul class="navbar-nav">
                 <li class="nav-item me-3">
-                    <a class="nav-link" href="#" style="font-weight: bold;">Products</a>
+                    <a class="nav-link" href="product.html" style="font-weight: bold;">Products</a>
                 </li>
                 <li class="nav-item me-3">
                     <a class="nav-link" href="#" style="font-weight: bold;">About</a>
@@ -38,7 +38,6 @@
             </ul>
         </div>
     </nav>
-
     <div id="productDetailContainer" class="container mt-5">
         <div class="row">
             <div class="col-md-6">
@@ -47,15 +46,6 @@
             <div class="col-md-6">
                 <h1 id="productName">Stylish Mug</h1>
                 <p id="productPrice" class="h3 mb-4">$19.99</p>
-                <div class="mb-4">
-                    <label for="colorSelect" class="form-label">Choose Color:</label>
-                    <select id="colorSelect" class="form-select">
-                        <option value="default">Default</option>
-                        <option value="red">Red</option>
-                        <option value="blue">Blue</option>
-                        <option value="green">Green</option>
-                    </select>
-                </div>
                 <button id="addToCartBtn" class="btn btn-primary btn-lg mb-4">Add to Cart</button>
                 
                 <div class="accordion" id="productAccordion">
@@ -82,6 +72,14 @@
                                 <div id="reviewsContainer">
                                     <!-- Reviews will be dynamically added here -->
                                 </div>
+                                <h5>Write a Review</h5>
+                                <form id="reviewForm">
+                                    <div class="mb-3">
+                                        <label for="reviewText" class="form-label">Your Review:</label>
+                                        <textarea class="form-control" id="reviewText" rows="3" required></textarea>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary">Submit Review</button>
+                                </form>
                             </div>
                         </div>
                     </div>
@@ -91,6 +89,6 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="/js/product-detail.js"></script>
+    <script src="js/product-detail.js"></script>
 </body>
 </html>

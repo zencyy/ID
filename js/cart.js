@@ -6,7 +6,7 @@ function getCart() {
     localStorage.setItem('cart', JSON.stringify(cart));
   }
   
-  function addToCart(event, productId, name, price) {
+  function addToCart(event, productId, name, price, image) {
     event.preventDefault();
     event.stopPropagation();
   
@@ -16,7 +16,7 @@ function getCart() {
     if (existingItem) {
       existingItem.quantity += 1;
     } else {
-      cart.push({ productId, name, price, quantity: 1 });
+      cart.push({ productId, name, price, image, quantity: 1 });
     }
   
     saveCart(cart);
@@ -44,20 +44,41 @@ function getCart() {
     const cartTotal = document.getElementById('cartTotal');
     const cart = getCart();
     let total = 0;
-  
-    cartItems.innerHTML = '';
+
+    cartItems.innerHTML = '<div class="card-body">';
     cart.forEach(item => {
-      const itemElement = document.createElement('div');
-      itemElement.innerHTML = `
-        <p>${item.name} - $${item.price} x ${item.quantity}</p>
-        <button onclick="removeFromCart('${item.productId}')">Remove</button>
-      `;
-      cartItems.appendChild(itemElement);
-      total += item.price * item.quantity;
+        cartItems.innerHTML += `
+            <div class="row mb-3">
+                <div class="col-md-2">
+                    <img src="pics/${item.image}" alt="${item.name}" class="img-fluid">
+                </div>
+                <div class="col-md-4">
+                    <h5>${item.name}</h5>
+                </div>
+                <div class="col-md-2">
+                    $${item.price.toFixed(2)}
+                </div>
+                <div class="col-md-2">
+                    <input type="number" class="form-control" value="${item.quantity}" min="1" onchange="updateQuantity('${item.productId}', this.value)">
+                </div>
+                <div class="col-md-2">
+                    <button class="btn btn-sm btn-danger" onclick="removeFromCart('${item.productId}')">Remove</button>
+                </div>
+            </div>
+        `;
+        total += item.price * item.quantity;
     });
+    cartItems.innerHTML += '</div>';
+
+    cartTotal.innerHTML = `
+        <p class="d-flex justify-content-between"><span>Subtotal:</span><span>$${total.toFixed(2)}</span></p>
+        <p class="d-flex justify-content-between"><span>Shipping:</span><span>Free</span></p>
+        <hr>
+        <h5 class="d-flex justify-content-between"><span>Total:</span><span>$${total.toFixed(2)}</span></h5>
+    `;
+}
   
-    cartTotal.innerHTML = `<h3>Total: $${total.toFixed(2)}</h3>`;
-  }
+
   
   // Call this function when the cart page loads
   function initCartPage() {
@@ -82,4 +103,14 @@ function getCart() {
       });
     }
   });
-  
+
+  function updateQuantity(productId, newQuantity) {
+    let cart = getCart();
+    let item = cart.find(item => item.productId === productId);
+    if (item) {
+        item.quantity = parseInt(newQuantity);
+        saveCart(cart);
+        displayCart();
+        updateCartCount();
+    }
+}

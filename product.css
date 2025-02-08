@@ -2,56 +2,92 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 20px;
+    gap: 30px;
     padding: 20px;
 }
 
 .product-card {
-    width: 250px;  
-    height: 250px;  
+    width: 350px;
+    height: auto; /* Change from fixed height to auto */
     border: none;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border-radius: 10px;
+    border-radius: 12px;
     overflow: hidden;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px; /* Add some bottom margin */
 }
 
 .product-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    transform: translateY(-8px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
 }
 
 .product-card img {
-    width: 100%;  
-    height: 150px;  
-    object-fit: cover;  
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
+
+.product-card .card-body {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-grow: 1;
+}
+
+.product-card .card-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.product-card .card-text {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #523825;
+    margin-bottom: 10px;
 }
 
 .product-card .btn-custom {
-    background-color: #523825;  
-    color: white !important;  
+    background-color: #523825;
+    color: white;
     font-weight: bold;
-    border-radius: 5px;  
-    padding: 10px 16px;
+    border-radius: 8px;
+    padding: 8px 12px;
     border: none;
-    transition: background 0.3s ease, color 0.3s ease;
+    transition: background 0.3s ease, transform 0.2s ease;
     display: block;
     width: 100%;
     text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-size: 0.9rem;
+    margin-top: auto;
 }
+
 
 .product-card .btn-custom:hover {
-    background-color: #3e2b1e;  
-    color: white !important;  
+    background-color: #3e2b1e;
+    transform: translateY(-2px);
 }
 
-.product-card a {
-    color: inherit;
+.product-link {
     text-decoration: none;
-}
-
+    color: inherit;
+  }
+  
+  .product-link:hover {
+    text-decoration: none;
+    color: inherit;
+  }
+  
 /* Home video carousel section */
 #carouselExample.carousel {
     position: relative;
