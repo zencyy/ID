@@ -76,11 +76,12 @@ document.addEventListener('DOMContentLoaded', async function() {
                     resultElement.textContent = `You won: ${data.prize}`;
                     if (data.voucher_code) {
                         resultElement.textContent += ` (Voucher Code: ${data.voucher_code})`;
-                        // Store voucher details in localStorage for use in checkout
                         localStorage.setItem('lastWonVoucher', JSON.stringify({
                             code: data.voucher_code,
                             amount: data.voucher_amount
                         }));
+                    } else if (data.points) {
+                        resultElement.textContent += ` (${data.points} points added to your balance)`;
                     }
                     updateUserProfile();
                 });
@@ -94,7 +95,6 @@ document.addEventListener('DOMContentLoaded', async function() {
             spinButton.disabled = false;
         }
     }
-    
 
     // Animate the wheel spinning
     function animateWheel(targetRotation, callback) {

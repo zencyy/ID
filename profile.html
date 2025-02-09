@@ -67,6 +67,29 @@
         .order-link:hover {
             text-decoration: underline;
         }
+
+        .badge-section {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+
+        .badge-link {
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            align-items: center;
+        }
+
+        .badge-link:hover {
+            text-decoration: none; /* Remove underline on hover */
+        }
+
+        .badge-icon {
+            font-size: 2rem;
+            margin-right: 5px;
+        }
     </style>
 </head>
 
@@ -85,19 +108,16 @@
                     <a class="nav-link" href="product.html" style="font-weight: bold;">Products</a>
                 </li>
                 <li class="nav-item me-3">
-                    <a class="nav-link" href="#" style="font-weight: bold;">About</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#" style="font-weight: bold;">Contact Us</a>
+                    <a class="nav-link" href="community.html" style="font-weight: bold;">Communiy</a>
                 </li>
             </ul>
             <ul class="navbar-nav">
                 <li class="nav-item">
-                  <a class="nav-link" href="cart.html">
-                    <i class="bi bi-cart"></i> Cart <span id="cartCount" class="badge bg-secondary">0</span>
-                  </a>
+                    <a class="nav-link" href="cart.html">
+                        <i class="bi bi-cart"></i> Cart <span id="cartCount" class="badge bg-secondary">0</span>
+                    </a>
                 </li>
-              </ul>
+            </ul>
             <!-- Account Icon and Dropdown -->
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item dropdown">
@@ -127,22 +147,30 @@
             <div id="vouchersPointsInfo"></div>
         </div>
 
+        <!-- Badges Section -->
+        <div class="badge-section">
+            <div class="section-title">My Badges</div>
+            <a href="badges.html" class="badge-link">
+                <i class="bi bi-award badge-icon"></i> <span id="badgeCount">3</span> Badges
+            </a>
+        </div>
+
         <div class="order-history">
             <div class="section-title">Order History</div>
             <div id="orderHistory"></div>
         </div>
     </div>
-   
+
     <script>
-    
+
         document.addEventListener('DOMContentLoaded', async function () {
             console.log('Supabase object:', window.supabase); // Check if supabase is accessible
-    if (window.supabase) {
-        window.supabase = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY); //This should be `window.supabase`
-    } else {
-      console.error('Supabase is not properly loaded.');
-      return; // Exit if supabase is not loaded
-    }           
+            if (window.supabase) {
+                window.supabase = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY); //This should be `window.supabase`
+            } else {
+                console.error('Supabase is not properly loaded.');
+                return; // Exit if supabase is not loaded
+            }
             const userDropdownMenu = document.getElementById('userDropdownMenu');
 
             // Function to update dropdown menu based on login status

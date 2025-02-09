@@ -27,10 +27,29 @@ async function loadProfileData() {
     const userInfo = document.getElementById('userInfo');
     userInfo.innerHTML = `<p><strong>Email:</strong> ${user.email}</p>`;
 
+    const { data: pointsData, error: pointsError } = await supabase
+        .from('loyalty_points')
+        .select('points_balance')
+        .eq('user_id', user.id)
+        .single();
+
+    if (pointsError) {
+        console.error("Error fetching loyalty points:", pointsError);
+    }
+
+    const { count: vouchersCount, error: vouchersError } = await supabase
+        .from('vouchers')
+        .select('*', { count: 'exact', head: true })
+        .eq('user_id', user.id);
+
+    if (vouchersError) {
+        console.error("Error fetching vouchers count:", vouchersError);
+    }
+
     const vouchersPointsInfo = document.getElementById('vouchersPointsInfo');
     vouchersPointsInfo.innerHTML = `
-        <p><strong>Points:</strong> ${user.user_metadata?.loyalty_points || 0}</p>
-        <p><strong>Vouchers:</strong> ${user.user_metadata?.voucher_count || 0}</p>
+        <p><strong>Points:</strong> ${pointsData?.points_balance || 0}</p>
+        <p><strong>Vouchers:</strong> ${vouchersCount || 0}</p>
     `;
 
     // Fetch order history (no changes needed here)

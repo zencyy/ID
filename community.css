@@ -1,51 +1,83 @@
+/* General Styles */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    background-color: #f0f0f0;
+    background-color: #f8f9fa;
+    color: #333;
 }
 
-header {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 1rem;
+/* Navbar */
+.navbar {
+    background-color: #ffffff !important;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-nav {
-    margin-top: 1rem;
+.navbar-nav .nav-link {
+    font-weight: 500;
+    color: #333 !important;
+    transition: color 0.3s ease-in-out;
 }
 
-nav a {
-    color: #fff;
-    text-decoration: none;
-    margin: 0 1rem;
+.navbar-nav .nav-link:hover {
+    color: #007bff !important;
 }
 
-nav a.active {
-    font-weight: bold;
-}
-
-main {
-    max-width: 800px;
+/* Main Content */
+.container {
+    max-width: 1000px;
     margin: 2rem auto;
-    padding: 0 1rem;
 }
 
-.post {
-    background-color: #fff;
-    border-radius: 5px;
-    margin-bottom: 1rem;
-    padding: 1rem;
+/* Community Title */
+h1 {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #333;
+}
+
+/* Post Filters */
+.btn-group .btn {
+    border-radius: 30px;
+    padding: 8px 16px;
+}
+
+.btn-group .btn.active {
+    background-color: #007bff;
+    color: white;
+}
+
+/* Create Post Button */
+.btn-primary {
+    border-radius: 30px;
+    padding: 10px 16px;
+}
+
+/* Post Cards */
+.post-list .card {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out;
+}
+
+.post-list .card:hover {
+    transform: translateY(-5px);
+}
+
+.card-body {
     display: flex;
+    align-items: center;
 }
 
+/* Voting Buttons */
 .vote {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-right: 1rem;
+    justify-content: center;
+    margin-right: 15px;
 }
 
 .vote button {
@@ -53,28 +85,82 @@ main {
     border: none;
     cursor: pointer;
     font-size: 1.2rem;
+    color: #555;
+    transition: color 0.3s ease-in-out;
 }
 
-.content {
-    flex-grow: 1;
+.vote button:hover {
+    color: #007bff;
 }
 
+.vote .score {
+    font-size: 1rem;
+    font-weight: bold;
+    margin: 5px 0;
+}
+
+/* Post Content */
 .content img {
-    max-width: 100%;
+    max-width: 150px;
     height: auto;
-    border-radius: 5px;
+    border-radius: 8px;
+    margin-bottom: 10px;
 }
 
-.meta {
-    color: #888;
+.card-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.card-text {
     font-size: 0.9rem;
+    color: #777;
 }
 
-.comments {
-    color: #888;
+.card-text a {
+    font-weight: 600;
+    color: #007bff;
     text-decoration: none;
 }
 
-.comments:hover {
+.card-text a:hover {
     text-decoration: underline;
+}
+
+/* Comments Button */
+.btn-outline-secondary {
+    border-radius: 30px;
+    font-size: 0.85rem;
+    padding: 5px 12px;
+}
+
+.btn-outline-secondary i {
+    margin-right: 5px;
+}
+
+/* Sidebar */
+.sidebar {
+    background: #fff;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .card-body {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .vote {
+        flex-direction: row;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .content img {
+        max-width: 100%;
+    }
 }
