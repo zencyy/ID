@@ -152,4 +152,6 @@ Inspiration for the community aspect was drawn from platforms like Reddit
 Inspiration for the discount and checkout aspect was drawn from Shein.
 
 githublink: https://github.com/zencyy/ID
-Work contribution - Yekai (front end) Zen(API/Backend)
+
+Published website using Netlify: https://mugify.netlify.app/product
+Work contribution - Yekai (front end), Zen(API/Backend)
