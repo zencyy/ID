@@ -1,17 +1,43 @@
-Mugify is an innovative online platform that brings together mug enthusiasts, designers, and casual shoppers. Our website offers a unique blend of e-commerce and community features, allowing users to browse, purchase, and even share their own mug designs. With Mugify, you're not just buying a mug; you're joining a vibrant community of mug/cup lovers and creators.
+Mugify is an innovative online platform that brings together mug enthusiasts, designers, and casual shoppers. Our website offers a unique blend of e-commerce and community features, allowing users to browse, purchase, and even share their own mug designs. 
+
+With Mugify, you're not just buying a mug; you're joining a vibrant community of mug/cup lovers and creators.
 Design Process
 Our design process focused on creating a user-friendly, visually appealing platform that caters to both shoppers and designers. We aimed to create a seamless experience that encourages user engagement and creativity.
+
+
 User Stories:
 As a shopper, I want to easily browse through various mug designs, so that I can find and purchase the perfect mug for me or as a gift.
+
+As a user, I want the website to be easy to navigate and use, with a clean and intuitive interface.
+
+As a user, I want the website to be responsive and work well on all devices (desktops, tablets, and smartphones).
+
+As a user, I want the website to load quickly and be performant.
+
 As a designer, I want to share my mug/cup designs with the community, so that I can get feedback and potentially sell my creations.
+
+As a designer, I want to have a clear and easy-to-use interface for uploading my mug designs.
+
+
 As a community member, I want to interact with other mug enthusiasts, so that I can discuss designs and get inspiration.
+
+As a community member, I want to be able to easily share mug designs on social media.
+
+
+
+
 Features
 Existing Features
 Product Catalog: Allows users to browse and purchase from a wide range of mug designs.
-Community Forum: Enables users to share their mug designs, comment on posts, and interact with people in the community.
+
+Community : Enables users to share their mug designs, comment on posts, and interact with people in the community.
+
 Lucky Spin: Allow users to spin the lucky wheel with 3 chances given everyday and stand a chance to win vouchers.
+
 Discounts: Users can use the voucher code to redeem in the checkout page to get discount
+
 Shopping Cart: Enables users to add items to their cart and complete purchases.
+
 Design Upload: Allows users to upload and share their own mug designs with the community.
 
 Features Left to Implement:
@@ -26,6 +52,12 @@ Bootstrap: Used for responsive design and pre-built components.
 jQuery: Used to simplify DOM manipulation.
 Supabase: Database to store data and User Authentication.
 Font Awesome: Used for icons throughout the site.
+
+AI Assistance:
+I used AI to help me with my Supabase API implementation, product display, cart, checkout , user authentication and vouchers etc.
+
+![api ai assitance](https://github.com/user-attachments/assets/ba8be44e-cb6f-4f97-8790-1adde5182574)
+
 
 Testing
 Adding Items to Cart:
@@ -101,9 +133,20 @@ Steps: Win a voucher.
 Expected Result: The voucher code is displayed and can be copied. It's added to the user's vouchers (if applicable).
 
 
-
+Credit
 Media
-The photos used in this site were obtained from Unsplash
-Acknowledgements
+Product images:
+
+tenstickers-singapore.com
+etsy.com
+woodchipdecor.com
+pinterest.com
+
+Product video carousell:
+pexels.com
+
+Home banner images:
+Illustrator AI 
+
 Inspiration for the community aspect was drawn from platforms like Reddit
 Inspiration for the discount and checkout aspect was drawn from Shein.
