@@ -160,6 +160,17 @@ async function initCartPage() {
     await updateCartCount();
 }
 
+function proceedToCheckout() {
+  const user = getCurrentUser();
+  if (!user) {
+      alert('Please log in to proceed to checkout.');
+      return;
+  }
+
+  // Navigate to the checkout page
+  window.location.href = 'checkout.html';
+}
+
 document.addEventListener('DOMContentLoaded', function () {
     const SUPABASE_URL = 'https://htvyyrenzsqbcfjlljmn.supabase.co';
     const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imh0dnl5cmVuenNxYmNmamxsam1uIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzkwMDQ4NjYsImV4cCI6MjA1NDU4MDg2Nn0.8M4tbHeD6Y9Qw_-GrKnGoa63GJQMq1_lObEh2jJjkvA';
@@ -187,5 +198,10 @@ document.addEventListener('DOMContentLoaded', function () {
                 window.location.href = event.target.href;
             }
         });
+    }
+
+    const checkoutButton = document.getElementById('checkoutButton');
+    if (checkoutButton) {
+        checkoutButton.addEventListener('click', proceedToCheckout);
     }
 });

@@ -31,7 +31,7 @@
                     <a class="nav-link" href="product.html" style="font-weight: bold;">Products</a>
                 </li>
                 <li class="nav-item me-3">
-                    <a class="nav-link" href="#" style="font-weight: bold;">About</a>
+                    <a class="nav-link" href="community.html" style="font-weight: bold;">Community</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#" style="font-weight: bold;">Contact Us</a>
@@ -81,6 +81,15 @@
                     <a href="product.html" class="btn btn-custom text-white">Shop Now</a>
                 </div>
             </div>
+            <div class="carousel-item">
+                <img src="pics/carouselhome3.png" class="d-block w-100" alt="Slide 2">
+                <div class="carousel-caption text-start d-none d-md-block">
+                    <h2 class="fw-bold" style="color:#523825">Spin The Wheel</h2>
+                    <p style="color:#523825">Earn FREE vouchers and points!</p>
+                    <a href="luckyspin.html" class="btn btn-custom text-white">Spin Now</a>
+                </div>
+            </div>
+            
         </div>
 
         <!-- Carousel Controls -->
@@ -269,6 +278,7 @@
                     userDropdownMenu.innerHTML = `
                             <li><span class="dropdown-item disabled">${userEmail}</span></li>
                             <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="profile.html">My Profile</a></li> <li><hr class="dropdown-divider"></li>
                             <li><button class="dropdown-item" id="logoutButton">Logout</button></li>
                         `;
 
