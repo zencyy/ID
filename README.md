@@ -150,3 +150,5 @@ Illustrator AI
 
 Inspiration for the community aspect was drawn from platforms like Reddit
 Inspiration for the discount and checkout aspect was drawn from Shein.
+
+Work contribution - Yekai (front end) Zen(API/Backend)
