@@ -19,7 +19,7 @@
 <body>
     <nav class="navbar navbar-expand-lg custom-navbar">
         <a class="navbar-brand d-flex align-items-center ms-4" href="index.html">
-            <img src="pics/logo.png" alt="Logo" style="height: 80px; width: auto;" class="me-2">
+            <img src="pics/logo.png" href="index.html" alt="Logo" style="height: 80px; width: auto;" class="me-2">
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
             aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -27,8 +27,17 @@
         </button>
         <div class="collapse navbar-collapse ms-3" id="navbarNavDropdown">
             <ul class="navbar-nav">
-                <li class="nav-item me-3">
-                    <a class="nav-link" href="product.html" style="font-weight: bold;">Products</a>
+                <li class="nav-item dropdown me-3">
+                    <a class="nav-link dropdown-toggle" href="#" id="productsDropdown" role="button" 
+                       data-bs-toggle="dropdown" aria-expanded="false" style="font-weight: bold;">
+                        Products
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="productsDropdown">
+                        <li><a class="dropdown-item" href="product.html">Best Collection</a></li>
+                        <li><a class="dropdown-item" href="mugs.html">Mugs</a></li>
+                        <li><a class="dropdown-item" href="cups.html">Cups</a></li>
+                        <li><a class="dropdown-item" href="Coasters.html">Coasters</a></li>
+                    </ul>
                 </li>
                 <li class="nav-item me-3">
                     <a class="nav-link" href="community.html" style="font-weight: bold;">Community</a>
@@ -36,11 +45,11 @@
             </ul>
             <ul class="navbar-nav">
                 <li class="nav-item">
-                  <a class="nav-link" href="cart.html">
-                    <i class="bi bi-cart"></i> Cart <span id="cartCount" class="badge bg-secondary">0</span>
-                  </a>
+                    <a class="nav-link" href="cart.html">
+                        <i class="bi bi-cart"></i> Cart <span id="cartCount" class="badge bg-secondary">0</span>
+                    </a>
                 </li>
-              </ul>
+            </ul>
             <!-- Account Icon and Dropdown -->
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item dropdown">
@@ -50,7 +59,7 @@
                     </a>
                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink"
                         id="userDropdownMenu">
-                        <li><a class="dropdown-item" href="loginregister.html">Login / Register</a></li>
+                        <li><a class="dropdown-item" href="index.html">Login / Register</a></li>
                     </ul>
                 </li>
             </ul>
@@ -111,7 +120,7 @@
                     <div class="card-body">
                         <h5 class="card-title">Dessert Theme</h5>
                         <p class="card-text">Featuring sweet designs of cupcakes, macarons, and donuts in playful pastel colors.</p>
-                        <a href="#" class="btn btn-custom text-white">Learn More</a>
+                        <a href="product.html" class="btn btn-custom text-white">Learn More</a>
                     </div>
                 </div>
             </div>
@@ -122,7 +131,7 @@
                     <div class="card-body">
                         <h5 class="card-title">Halloween Theme</h5>
                         <p class="card-text">Showcasing spooky pumpkins, ghosts, and haunted houses in bold festive shades.</p>
-                        <a href="#" class="btn btn-custom text-white">Learn More</a>
+                        <a href="product.html" class="btn btn-custom text-white">Learn More</a>
                     </div>
                 </div>
             </div>
@@ -133,7 +142,7 @@
                     <div class="card-body">
                         <h5 class="card-title">Animal Theme</h5>
                         <p class="card-text">Highlighting charming illustrations of cats, dogs, and wildlife for animal lovers.</p>
-                        <a href="#" class="btn btn-custom text-white">Learn More</a>
+                        <a href="product.html" class="btn btn-custom text-white">Learn More</a>
                     </div>
                 </div>
             </div>
@@ -152,8 +161,8 @@
                 <div class="card feature-card h-100 border-0 shadow-sm">
                     <img src="pics/allcat.jpg" alt="Feature 4" class="card-img-top img-fluid rounded-top">
                     <div class="card-body">
-                        <h5 class="card-title">All</h5><br>
-                        <a href="#" class="btn btn-custom text-white">Learn More</a>
+                        <h5 class="card-title">Best Collection</h5><br>
+                        <a href="product.html" class="btn btn-custom text-white">Learn More</a>
                     </div>
                 </div>
             </div>
@@ -164,7 +173,7 @@
                     <img src="pics/mugcat.jpg" alt="Feature 5" class="card-img-top img-fluid rounded-top">
                     <div class="card-body">
                         <h5 class="card-title">Mugs</h5><br>
-                        <a href="#" class="btn btn-custom text-white">Learn More</a>
+                        <a href="mugs.html" class="btn btn-custom text-white">Learn More</a>
                     </div>
                 </div>
             </div>
@@ -175,7 +184,7 @@
                     <img src="pics/cupcat.webp" alt="Feature 6" class="card-img-top img-fluid rounded-top">
                     <div class="card-body">
                         <h5 class="card-title">Cups</h5><br>
-                        <a href="#" class="btn btn-custom text-white">Learn More</a>
+                        <a href="cups.html" class="btn btn-custom text-white">Learn More</a>
                     </div>
                 </div>
             </div>
@@ -186,7 +195,7 @@
                     <img src="pics/coastercat.jpg" alt="Feature 7" class="card-img-top img-fluid rounded-top">
                     <div class="card-body">
                         <h5 class="card-title">Coasters</h5><br>
-                        <a href="#" class="btn btn-custom text-white">Learn More</a>
+                        <a href="coasters.html" class="btn btn-custom text-white">Learn More</a>
                     </div>
                 </div>
             </div>

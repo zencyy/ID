@@ -15,24 +15,47 @@
         <a class="navbar-brand d-flex align-items-center ms-4" href="index.html">
             <img src="pics/logo.png" href="index.html" alt="Logo" style="height: 80px; width: auto;" class="me-2">
         </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse ms-3" id="navbarNavDropdown">
             <ul class="navbar-nav">
-                <li class="nav-item me-3">
-                    <a class="nav-link" href="product.html" style="font-weight: bold;">Products</a>
+                <li class="nav-item dropdown me-3">
+                    <a class="nav-link dropdown-toggle" href="#" id="productsDropdown" role="button" 
+                       data-bs-toggle="dropdown" aria-expanded="false" style="font-weight: bold;">
+                        Products
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="productsDropdown">
+                        <li><a class="dropdown-item" href="product.html">Best Collection</a></li>
+                        <li><a class="dropdown-item" href="mugs.html">Ceramic Mugs</a></li>
+                        <li><a class="dropdown-item" href="cups.html">Travel Mugs</a></li>
+                        <li><a class="dropdown-item" href="Coasters.html">Custom Designs</a></li>
+                    </ul>
                 </li>
                 <li class="nav-item me-3">
                     <a class="nav-link" href="community.html" style="font-weight: bold;">Community</a>
                 </li>
             </ul>
             <ul class="navbar-nav">
-              <li class="nav-item">
-                <a class="nav-link" href="cart.html">
-                  <i class="bi bi-cart"></i> Cart <span id="cartCount" class="badge bg-secondary">0</span>
-                </a>
-              </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="cart.html">
+                        <i class="bi bi-cart"></i> Cart <span id="cartCount" class="badge bg-secondary">0</span>
+                    </a>
+                </li>
+            </ul>
+            <!-- Account Icon and Dropdown -->
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="bi bi-person-circle" style="font-size: 1.5rem;"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink"
+                        id="userDropdownMenu">
+                        <li><a class="dropdown-item" href="index.html">Login / Register</a></li>
+                    </ul>
+                </li>
             </ul>
         </div>
     </nav>

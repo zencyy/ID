@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -68,8 +69,8 @@
                     <h1 class="mb-4">Mug Design Community</h1>
                     <div class="d-flex justify-content-between align-items-center mb-4">
                         <div class="btn-group">
-                            <a href="community.css" class="btn btn-outline-primary active">Hot</a>
-                            <a href="community2.html" class="btn btn-outline-primary">New</a>
+                            <a href="community.html" class="btn btn-outline-primary">Hot</a>
+                            <a href="community2.html" class="btn btn-outline-primary active">New</a>
                         </div>
                         <a href="sharepost.html" class="btn btn-primary">Create Post</a>
                     </div>
@@ -84,7 +85,7 @@
                                     <button class="downvote"><i class="fas fa-arrow-down"></i></button>
                                 </div>
                                 <div class="content">
-                                    <img src="pics/mugdesign3.jpg" alt="Colorful Abstract Mug" class="mb-2" style="max-width: 100%; height: auto;">
+                                    <img src="pics/mug_design_1.jpg" alt="Colorful Abstract Mug" class="mb-2" style="max-width: 100%; height: auto;">
                                     <h5 class="card-title">Colorful Abstract Mug Design</h5>
                                     <p class="card-text">Check out my latest abstract design! What do you think?</p>
                                     <p class="card-text">
@@ -108,7 +109,7 @@
                                     <button class="downvote"><i class="fas fa-arrow-down"></i></button>
                                 </div>
                                 <div class="content">
-                                    <img src="pics/mugdesign2.webp" alt="Minimalist Mug" class="mb-2" style="max-width: 100%; height: auto;">
+                                    <img src="pics/mug_design_2.jpg" alt="Minimalist Mug" class="mb-2" style="max-width: 100%; height: auto;">
                                     <h5 class="card-title">Minimalist Mug Design</h5>
                                     <p class="card-text">Embracing simplicity with this clean, minimalist design. Thoughts?</p>
                                     <p class="card-text">
@@ -170,6 +171,7 @@
             </div>
         </div>
     </div>
+    
     <script>
         const SUPABASE_URL = 'https://htvyyrenzsqbcfjlljmn.supabase.co';
         const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imh0dnl5cmVuenNxYmNmamxsam1uIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzkwMDQ4NjYsImV4cCI6MjA1NDU4MDg2Nn0.8M4tbHeD6Y9Qw_-GrKnGoa63GJQMq1_lObEh2jJjkvA';
@@ -242,7 +244,91 @@
         });
     });
 });
+document.addEventListener('DOMContentLoaded', function() {
+            const posts = JSON.parse(localStorage.getItem('communityPosts')) || [];
+            const postList = document.querySelector('.post-list');
+            postList.innerHTML = ''; // Clear existing posts
 
-</script>
+            posts.forEach(post => {
+                const postElement = createPostElement(post);
+                postList.appendChild(postElement);
+            });
+        });
+
+        function createPostElement(post, index) {
+    const postDate = new Date(post.timestamp);
+    const timeAgo = getTimeAgo(postDate);
+
+    const postElement = document.createElement('div');
+    postElement.className = 'card post-card mb-3 p-3';
+    postElement.innerHTML = `
+        <div class="d-flex">
+            <div class="vote me-3">
+                <button class="upvote"><i class="fas fa-arrow-up"></i></button>
+                <span class="score">${post.score}</span>
+                <button class="downvote"><i class="fas fa-arrow-down"></i></button>
+            </div>
+            <div class="content">
+                <img src="${post.imageUrl}" alt="${post.title}" class="mb-2" style="max-width: 100%; height: auto;">
+                <h5 class="card-title">${post.title}</h5>
+                <p class="card-text">${post.description}</p>
+                <p class="card-text">
+                    <small class="text-muted">
+                        Posted by <a href="#">${post.author}</a> ${timeAgo}
+                    </small>
+                </p>
+                <a href="comments.html" class="btn btn-sm btn-outline-secondary">
+                    <i class="fas fa-comment"></i> ${post.commentCount} comments
+                </a>
+                <button class="btn btn-sm btn-danger delete-post" data-index="${index}">Delete</button>
+            </div>
+        </div>
+    `;
+    return postElement;
+}
+
+        function getTimeAgo(date) {
+            const seconds = Math.floor((new Date() - date) / 1000);
+            let interval = seconds / 31536000;
+            if (interval > 1) return Math.floor(interval) + " years ago";
+            interval = seconds / 2592000;
+            if (interval > 1) return Math.floor(interval) + " months ago";
+            interval = seconds / 86400;
+            if (interval > 1) return Math.floor(interval) + " days ago";
+            interval = seconds / 3600;
+            if (interval > 1) return Math.floor(interval) + " hours ago";
+            interval = seconds / 60;
+            if (interval > 1) return Math.floor(interval) + " minutes ago";
+            return Math.floor(seconds) + " seconds ago";
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+    const posts = JSON.parse(localStorage.getItem('communityPosts')) || [];
+    const postList = document.querySelector('.post-list');
+    
+    function renderPosts() {
+        postList.innerHTML = ''; // Clear existing posts
+        posts.forEach((post, index) => {
+            const postElement = createPostElement(post, index);
+            postList.appendChild(postElement);
+        });
+    }
+
+    renderPosts();
+
+    // Add event listener for delete buttons
+    postList.addEventListener('click', function(e) {
+        if (e.target.classList.contains('delete-post')) {
+            const index = e.target.getAttribute('data-index');
+            if (confirm('Are you sure you want to delete this post?')) {
+                posts.splice(index, 1);
+                localStorage.setItem('communityPosts', JSON.stringify(posts));
+                renderPosts();
+            }
+        }
+    });
+});
+    </script>
+    <script src="script.js"></script>
 </body>
 </html>
